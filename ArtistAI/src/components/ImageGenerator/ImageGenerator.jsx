@@ -10,6 +10,7 @@ const ImageGenerator = () => {
   const imageGenerator = async () => {
     try {
       if (!prompt) return;
+
       setLoading(true);
       const actualPrompt = prompt.trim();
 
@@ -51,14 +52,14 @@ const ImageGenerator = () => {
   return (
     <div className="ai-image-generator">
       <div className="header">
-        ArtistAI <span>AI GENERATOR</span>
+        ArtistAI <span><i>Image</i>  GENERATOR</span>
       </div>
 
       <div className="img-loading">
         {loading ? (
-          <div class="image-container">
-            <div class="shimmer">
-              <div class="loading-message">
+          <div className="image-container">
+            <div className="shimmer">
+              <div className="loading-message">
                 <svg
                   width="50"
                   height="50"
@@ -71,10 +72,10 @@ const ImageGenerator = () => {
                     cy="25"
                     r="20"
                     stroke="#ccc"
-                    stroke-width="4"
+                    strokeWidth="4"
                     fill="none"
-                    stroke-dasharray="80"
-                    stroke-dashoffset="60"
+                    strokeDasharray="80"
+                    strokeDashoffset="60"
                   >
                     <animateTransform
                       attributeType="XML"
@@ -90,7 +91,7 @@ const ImageGenerator = () => {
                 <p>Preparing the image...</p>
               </div>
             </div>
-            <div class="image">
+            <div className="image">
               <img src="{image_url}" alt="Generated Image" />
             </div>
           </div>
